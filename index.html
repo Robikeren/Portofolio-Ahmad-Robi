@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio — Ahmad Robi Faro'id</title>
+  <meta name="description" content="Portofolio personal Ahmad Robi — projek, skill, kontak." />
+
+  <!-- Favicon simple SVG data URI -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23336'/%3E%3Ctext x='50' y='58' font-size='40' text-anchor='middle' fill='white' font-family='Arial'%3ER%3C/text%3E%3C/svg%3E">
+
+  <!-- CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background animation elements -->
+  <div class="background-animation">
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    <div class="floating-circle circle-3"></div>
+    <div class="floating-circle circle-4"></div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">R</div>
+        <div class="brand-info">
+          <h1>Ahmad Robi Faro'id</h1>
+          <p>Mahasiswa Informatika — Developer &amp; Penulis</p>
+        </div>
+      </div>
+
+      <nav aria-label="main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certification">Certification</a>
+        <a href="#activities">Activities</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-buttons">
+        <a href="CV%20AHMAD%20ROBI%20FAROID.pdf" class="btn ghost" download="CV_AHMAD_ROBI_FAROID.pdf">Download CV</a>
+        <button class="btn" id="themeToggle">Light</button>
+      </div>
+    </header>
+
+    <!-- Programming Tags Animation -->
+    <div class="tags-scroller">
+      <div class="tags-container">
+        <span class="tag-scroll"><img src="js.png" alt="JavaScript" class="tag-icon">JavaScript</span>
+        <span class="tag-scroll"><img src="py.png" alt="Python" class="tag-icon">Python</span>
+        <span class="tag-scroll"><img src="cs.png" alt="C#" class="tag-icon">C#</span>
+        <span class="tag-scroll"><img src="html.png" alt="HTML" class="tag-icon">HTML</span>
+        <span class="tag-scroll"><img src="css.jpg" alt="CSS" class="tag-icon">CSS</span>
+        <span class="tag-scroll"><img src="php.jpg" alt="PHP" class="tag-icon">PHP</span>
+        <span class="tag-scroll"><img src="ruby.png" alt="Ruby" class="tag-icon">Ruby</span>
+        <span class="tag-scroll"><img src="kt.png" alt="Kotlin" class="tag-icon">Kotlin</span>
+        <span class="tag-scroll"><img src="go.png" alt="Golang" class="tag-icon">Golang</span>
+        <!-- Duplicate tags for seamless looping -->
+        <span class="tag-scroll"><img src="js.png" alt="JavaScript" class="tag-icon">JavaScript</span>
+        <span class="tag-scroll"><img src="py.png" alt="Python" class="tag-icon">Python</span>
+        <span class="tag-scroll"><img src="cs.png" alt="C#" class="tag-icon">C#</span>
+        <span class="tag-scroll"><img src="html.png" alt="HTML" class="tag-icon">HTML</span>
+        <span class="tag-scroll"><img src="css.jpg" alt="CSS" class="tag-icon">CSS</span>
+        <span class="tag-scroll"><img src="php.jpg" alt="PHP" class="tag-icon">PHP</span>
+        <span class="tag-scroll"><img src="ruby.png" alt="Ruby" class="tag-icon">Ruby</span>
+        <span class="tag-scroll"><img src="kt.png" alt="Kotlin" class="tag-icon">Kotlin</span>
+        <span class="tag-scroll"><img src="go.png" alt="Golang" class="tag-icon">Golang</span>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="intro card fade-up" id="intro">
+          <h2 class="typing">Hii All, Robi Here ... </h2>
+          <p class="lead">I am an Informatics student at the University of Jember with a strong interest in technology and writing. I also possess public speaking skills and an entrepreneurial spirit that I continuously develop. With this combination, I strive to be adaptive and ready to face future challenges.</p>
+
+          <div class="cta-row">
+            <button class="btn contact-btn">Hubungi Saya</button>
+            <button class="btn ghost projects-btn">Lihat Projek</button>
+          </div>
+
+          <div class="availability">
+            <strong>Availability:</strong> Terbuka untuk Job & Freelance.
+          </div>
+        </div>
+
+        <aside class="profile-card card fade-up" id="profile">
+          <div class="avatar" id="avatar-container">
+            <img src="./Foto.png" alt="Foto Ahmad Robi Faro'id" class="profile-photo">
+            <div class="avatar-fallback"> </div>
+          </div>
+          <div class="profile-name">Ahmad Robi Faro'id</div>
+          <div class="small">Mahasiswa Informatika — Universitas Jember</div>
+
+          <div class="profile-details">
+            <div class="profile-stats">
+              <div>
+                <strong>Live:</strong>
+                <div class="small">Programmer, Design, Writing</div>
+              </div>
+              <div>
+                <strong>Experience:</strong>
+                <div class="small">Proyek kampus & freelance</div>
+              </div>
+            </div>
+
+            <div class="profile-links">
+              <a class="link" href="#projects">Project</a>
+              <a class="link" href="#certification">Certification</a>
+              <a class="link" href="#contact">Contact</a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="card">
+          <h3>Tentang Saya</h3>
+          <p class="muted">Saya adalah mahasiswa Informatika di Universitas Jember dengan minat besar pada pengembangan teknologi dan kepenulisan. Selain itu, saya memiliki kemampuan public speaking dan jiwa entrepreneur yang terus saya asah. Dengan kombinasi keterampilan tersebut, saya berusaha untuk selalu produktif, adaptif, serta siap menghadapi berbagai tantangan di dunia akademik maupun profesional.</p>
+
+          <div class="about-cards">
+            <div class="card">
+              <h4>Education</h4>
+              <p class="muted">S1 Informatika — Universitas Jember (sedang berjalan)</p>
+            </div>
+            <div class="card">
+              <h4>Interests</h4>
+              <p class="muted">AI, Web Dev, Desain, Penulisan Nonfiksi & Fiksi</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Skills</h3>
+            <div class="skills">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">React (dasar)</span>
+              <span class="skill">Python</span>
+              <span class="skill">NumPy</span>
+              <span class="skill">Machine Learning</span>
+              <span class="skill">Git</span>
+              <span class="skill">C#</span>
+              <span class="skill">MsOffice</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Tools</h3>
+            <div class="skills">
+              <span class="skill">VSCode</span>
+              <span class="skill">GitHub</span>
+              <span class="skill">Figma</span>
+              <span class="skill">Postman</span>
+              <span class="skill">MsOffice</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Languages</h3>
+            <div>
+              <p class="muted">Bahasa Indonesia (native), English (intermediate)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="projects-grid">
+          <article class="project card" data-title="Sistem Jual Buket">
+            <h4>Sistem Jual Buket</h4>
+            <p class="muted">Membangun sistem jual buket menggunakan kombinasi C#, desain UI dengan Figma, dan database PostgreSQL.</p>
+            <div class="project-tags">
+              <span class="tag">C#</span>
+              <span class="tag">Figma</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+          </article>
+
+          <article class="project card" data-title="Sistem Jual Beli Tanaman Hias">
+            <h4>Sistem Jual Beli Tanaman Hias</h4>
+            <p class="muted">Aplikasi sederhana untuk jual beli tanaman hias berbasis Python.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+            </div>
+          </article>
+
+          <article class="project card" data-title="Aplikasi Kasir">
+            <h4>Aplikasi Kasir</h4>
+            <p class="muted">Aplikasi kasir berbasis Python untuk pengelolaan transaksi sederhana.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+            </div>
+          </article>
+
+          <article class="project card" data-title="Website Portofolio">
+            <h4>Website Portofolio</h4>
+            <p class="muted">Website portofolio personal berbasis HTML, CSS, dan JavaScript.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="project card" data-title="Penulisan Karya Ilmiah">
+            <h4>Penulisan Karya Ilmiah</h4>
+            <p class="muted">Penulisan karya ilmiah berbasis riset dengan focus pada kepenulisan akademik.</p>
+            <div class="project-tags">
+              <span class="tag">Kepenulisan</span>
+              <span class="tag">Riset</span>
+            </div>
+          </article>
+
+          <article class="project card" data-title="TechLeaf">
+            <h4>TechLeaf</h4>
+            <p class="muted">Aplikasi Manajemen Perawatan dan Penjualan Produk Tembakau - Top 10 Nasional Inovasi Bisnis Digital</p>
+            <div class="project-tags">
+              <a href="https://drive.google.com/file/d/1NpSNw8hk_2aGCC3svnRBeV5pdFVMIX6D/view?usp=drive_link" class="btn ghost" target="_blank">Detail</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Course & Certification -->
+      <section id="certification">
+        <h3>Course & Certification</h3>
+        <div class="certification-grid">
+          <article class="certification-card card">
+            <div class="certification-image">
+              <img src="seminar.png" alt="Seminar Nasional Future Entrepreneur Summit 2024" class="certification-img">
+            </div>
+            <div class="certification-content">
+              <h4>Seminar Nasional Future Entrepreneur Summit 2024</h4>
+              <p class="muted">Seminar nasional tentang kewirausahaan dan pengembangan bisnis masa depan.</p>
+              <div class="certification-details">
+                <span class="certification-date">2024</span>
+                <span class="certification-badge">Sertifikat</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="certification-card card">
+            <div class="certification-image">
+              <img src="pub.png" alt="Pelatihan Public Speaking 2024" class="certification-img">
+            </div>
+            <div class="certification-content">
+              <h4>Pelatihan Public Speaking 2024</h4>
+              <p class="muted">Pelatihan kemampuan berbicara di depan umum dan presentasi efektif.</p>
+              <div class="certification-details">
+                <span class="certification-date">2024</span>
+                <span class="certification-badge">Sertifikat</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="certification-card card">
+            <div class="certification-image">
+              <img src="web.png" alt="Webinar Nasional 2024 Skill-Development" class="certification-img">
+            </div>
+            <div class="certification-content">
+              <h4>Webinar Nasional Skill-Development 2024</h4>
+              <p class="muted">Webinar pengembangan skill dan kompetensi profesional.</p>
+              <div class="certification-details">
+                <span class="certification-date">2024</span>
+                <span class="certification-badge">Sertifikat</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="certification-card card">
+            <div class="certification-image">
+              <img src="en.png" alt="Pelatihan Entrepreneur Nasional" class="certification-img">
+            </div>
+            <div class="certification-content">
+              <h4>Pelatihan Entrepreneur Nasional</h4>
+              <p class="muted">Pelatihan kewirausahaan nasional untuk pengembangan bisnis startup.</p>
+              <div class="certification-details">
+                <span class="certification-date">2024</span>
+                <span class="certification-badge">Sertifikat</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="certification-card card">
+            <div class="certification-image">
+              <img src="inter.png" alt="Seminar Internasional 2024 FEST GOWORLD ASIA" class="certification-img">
+            </div>
+            <div class="certification-content">
+              <h4>Seminar Internasional FEST GOWORLD ASIA 2024</h4>
+              <p class="muted">Seminar internasional tentang futurepreneur selection program.</p>
+              <div class="certification-details">
+                <span class="certification-date">2024</span>
+                <span class="certification-badge">Sertifikat</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="certification-card card">
+            <div class="certification-image">
+              <img src="10.png" alt="TOP 10 Kompetisi Ide Bisnis Nasional 2024" class="certification-img">
+            </div>
+            <div class="certification-content">
+              <h4>TOP 10 Kompetisi Ide Bisnis Nasional 2024</h4>
+              <p class="muted">Pencapaian TOP 10 dalam kompetisi ide bisnis tingkat nasional.</p>
+              <div class="certification-details">
+                <span class="certification-date">2024</span>
+                <span class="certification-badge">Prestasi</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Activities -->
+      <section id="activities">
+        <h3>Latest Activities</h3>
+        <div class="activities-grid">
+          <article class="activity-card card">
+            <div class="activity-image">
+              <img src="./Podcast.jpg" alt="Podcast En Pods tentang Freelance" class="activity-img">
+              <div class="activity-img-fallback">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                <p>Podcast Image</p>
+              </div>
+              <div class="play-overlay">
+                <a href="https://www.youtube.com/live/yA-I4t782VA?si=X6ggHJnoMOABzAwp" target="_blank" class="play-button">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="activity-content">
+              <h4>Talent Podcast - En Pods</h4>
+              <p class="muted">Berbagi pengalaman sebagai freelancer di bidang teknologi dan penulisan dalam acara podcast En Pods.</p>
+              <div class="activity-details">
+                <span class="activity-date">September 2025</span>
+                <a href="https://www.youtube.com/live/yA-I4t782VA?si=X6ggHJnoMOABzAwp" target="_blank" class="btn ghost activity-link">Tonton</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PKM RSH -->
+          <article class="activity-card card">
+            <div class="activity-image">
+              <img src="pkm.jpg" alt="PKM RSH Digiocean" class="activity-img">
+            </div>
+            <div class="activity-content">
+              <h4>PKM RSH - Digiocean</h4>
+              <p class="muted">Digiocean : inovasi media pembelajaran berbasis eksplorasi fisika oseanografi untuk penguatan literasi sains dan kesiapsiagaan bencana bermuatan kearifan lokal pesisir puger.</p>
+              <div class="activity-details">
+                <span class="activity-date">Januari 2025</span>
+                <button class="btn ghost activity-link">Detail</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="contact-container">
+          <div class="card contact-form">
+            <input class="input" id="name" placeholder="Nama" />
+            <input class="input" id="email" placeholder="Email" />
+            <textarea id="message" placeholder="Isi Pesan ..."></textarea>
+            <div class="form-buttons">
+              <button class="btn send-btn">Kirim</button>
+              <button class="btn ghost copy-btn">Salin Email</button>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h4>Kontak Langsung</h4>
+            <p class="muted">Email: <a class="link" href="mailto:rrobbyxx@gmail.com">rrobbyxx@gmail.com</a></p>
+            <p class="muted">Lokasi: Jember, Jawa Timur</p>
+
+            <div class="social-section">
+              <h4>Social</h4>
+              <div class="social-links">
+                <a class="link" href="https://github.com/Robikeren" target="_blank">GitHub</a>
+                <a class="link" href="https://www.linkedin.com/in/ahmad-robi-150094331" target="_blank">LinkedIn</a>
+                <a class="link" href="https://www.instagram.com/ahmd.robi29/" target="_blank">Instagram</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer>
+        Dibuat oleh Ahmad Robi — &copy; <span id="year"></span>. Siap untuk kerjasama?
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal for project details -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="box">
+      <button class="close-modal-btn">Tutup</button>
+      <h3 id="modalTitle">Judul Projek</h3>
+      <p id="modalBody" class="muted">Deskripsi detail projek akan tampil disini.</p>
+    </div>
+  </div>
+
+  <!-- Script eksternal -->
+  <script src="script.js"></script>
+</body>
+</html>
