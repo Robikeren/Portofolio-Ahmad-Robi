@@ -15,6 +15,10 @@ body.dark {
   --primary: #88c;
 }
 
+* {
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -46,8 +50,10 @@ body {
 }
 
 .circle-1 {
-  width: 300px;
-  height: 300px;
+  width: 20vw;
+  height: 20vw;
+  max-width: 300px;
+  max-height: 300px;
   background: var(--primary);
   top: 10%;
   left: 5%;
@@ -55,8 +61,10 @@ body {
 }
 
 .circle-2 {
-  width: 200px;
-  height: 200px;
+  width: 15vw;
+  height: 15vw;
+  max-width: 200px;
+  max-height: 200px;
   background: var(--primary);
   bottom: 15%;
   right: 10%;
@@ -64,8 +72,10 @@ body {
 }
 
 .circle-3 {
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
+  max-width: 150px;
+  max-height: 150px;
   background: var(--primary);
   top: 50%;
   left: 80%;
@@ -73,8 +83,10 @@ body {
 }
 
 .circle-4 {
-  width: 250px;
-  height: 250px;
+  width: 18vw;
+  height: 18vw;
+  max-width: 250px;
+  max-height: 250px;
   background: var(--primary);
   bottom: 5%;
   left: 15%;
@@ -98,7 +110,7 @@ body {
 
 /* Tags Scroller Animation */
 .tags-scroller {
-  overflow: hidden;
+  overflow-x: hidden; /* Ensure no horizontal scrolling */
   width: 100%;
   background: var(--card);
   padding: 1rem 0;
@@ -148,8 +160,9 @@ body {
 
 .wrap {
   max-width: 1280px;
+  width: 100%; /* Ensure full width */
   margin: auto;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 /* Header Styles */
@@ -204,7 +217,7 @@ header .logo {
 
 .brand-info h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 4vw, 1.8rem); /* Responsive font size */
   line-height: 1.2;
   animation: slideInFromLeft 1s ease-out;
 }
@@ -222,7 +235,7 @@ header .logo {
 
 .brand-info p {
   margin: 4px 0 0 0;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   color: var(--muted);
 }
 
@@ -243,7 +256,7 @@ nav a {
   font-weight: 500;
   position: relative;
   transition: var(--transition);
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
 }
 
 nav a:hover {
@@ -277,7 +290,7 @@ nav a:hover::after {
   font-weight: 500;
   text-decoration: none;
   display: inline-block;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
 }
 
 .btn:hover {
@@ -339,14 +352,14 @@ nav a:hover::after {
 }
 
 .intro h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 6vw, 2.5rem); /* Responsive font size */
   margin-bottom: 1.2rem;
   color: var(--primary);
   animation: typing 3s steps(30, end);
 }
 
 .lead {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
   margin-bottom: 1.8rem;
   line-height: 1.7;
 }
@@ -359,7 +372,7 @@ nav a:hover::after {
 
 .availability {
   margin-top: 20px;
-  font-size: 15px;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
   color: var(--muted);
   padding: 10px;
   background: rgba(0, 0, 0, 0.03);
@@ -400,21 +413,22 @@ nav a:hover::after {
 }
 
 .avatar {
-  width: 140px;
-  height: 140px;
+  width: min(140px, 40vw); /* Scale with viewport */
+  height: min(140px, 40vw);
   margin: 0 auto 1.5rem;
   position: relative;
-  overflow: hidden; /* Prevent pointed edges */
+  overflow: hidden;
   z-index: 1;
-  border-radius: 50%; /* Ensure circular container */
+  border-radius: 50%;
 }
 
 .profile-photo {
-  width: 140px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%; /* Prevent overflow */
   object-fit: cover;
   display: block;
-  border-radius: 50%; /* Ensure circular image */
+  border-radius: 50%;
   border: 2px solid var(--primary);
   position: relative;
   z-index: 2;
@@ -422,11 +436,11 @@ nav a:hover::after {
 
 .avatar-fallback {
   display: none;
-  width: 140px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
   background: var(--primary);
   color: white;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -434,7 +448,7 @@ nav a:hover::after {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 50%; /* Match circular shape */
+  border-radius: 50%;
 }
 
 .avatar.error .profile-photo {
@@ -447,14 +461,14 @@ nav a:hover::after {
 
 .profile-name {
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 1;
 }
 
 .profile-card .small {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   color: var(--muted);
   margin-bottom: 1.2rem;
   position: relative;
@@ -472,7 +486,7 @@ nav a:hover::after {
   display: flex;
   justify-content: space-between;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
   margin-bottom: 1.5rem;
   gap: 1.2rem;
 }
@@ -509,17 +523,6 @@ nav a:hover::after {
   animation: fadeInUp 1s ease-out;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Education Section */
 #education {
   margin-top: 20px;
@@ -534,16 +537,18 @@ nav a:hover::after {
 .education-card {
   flex: 1;
   background: var(--card);
-  padding: 1.8rem;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-height: 180px;
+  overflow: hidden;
   transition: var(--transition);
 }
 
 .education-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .education-card h4 {
@@ -572,16 +577,16 @@ nav a:hover::after {
 .interest-card {
   flex: 1;
   background: var(--card);
-  padding: 1.8rem;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
 }
 
 .interest-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .interest-card h4 {
@@ -617,17 +622,6 @@ nav a:hover::after {
   animation: fadeIn 0.5s ease-out;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .skills .skill:hover, .project-tags .tag:hover {
   transform: scale(1.1) rotate(3deg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -641,8 +635,8 @@ nav a:hover::after {
 .certification-grid {
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: auto; /* Allow natural height */
 }
 
 .certification-card {
@@ -655,7 +649,7 @@ nav a:hover::after {
 .certification-image {
   position: relative;
   width: 100%;
-  height: 150px;
+  aspect-ratio: 16 / 9; /* Maintain aspect ratio */
   overflow: hidden;
   border-radius: 12px 12px 0 0;
 }
@@ -663,6 +657,7 @@ nav a:hover::after {
 .certification-img {
   width: 100%;
   height: 100%;
+  max-width: 100%; /* Prevent overflow */
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -740,7 +735,7 @@ nav a:hover::after {
   flex-direction: column;
   overflow: hidden;
   animation: fadeIn 0.7s ease-out;
-  border-radius: 12px; /* Match PKM RSH - Digiocean card style */
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   background: var(--card);
   transition: var(--transition);
@@ -754,17 +749,18 @@ nav a:hover::after {
 .activity-image {
   position: relative;
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 9; /* Maintain aspect ratio */
   overflow: hidden;
-  border-radius: 12px 12px 0 0; /* Rounded top corners */
+  border-radius: 12px 12px 0 0;
 }
 
 .activity-img {
   width: 100%;
   height: 100%;
+  max-width: 100%; /* Prevent overflow */
   object-fit: cover;
   display: block;
-  border-radius: 12px 12px 0 0; /* Match container rounding */
+  border-radius: 12px 12px 0 0;
   position: relative;
   z-index: 2;
   transition: transform 0.3s ease;
@@ -785,7 +781,7 @@ nav a:hover::after {
   left: 0;
   text-align: center;
   font-size: 0.9rem;
-  border-radius: 12px 12px 0 0; /* Match image rounding */
+  border-radius: 12px 12px 0 0;
 }
 
 .activity-img-fallback svg {
@@ -821,7 +817,7 @@ nav a:hover::after {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 3;
-  border-radius: 12px 12px 0 0; /* Match image rounding */
+  border-radius: 12px 12px 0 0;
 }
 
 .activity-image:hover .play-overlay {
@@ -883,7 +879,7 @@ nav a:hover::after {
 
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr minmax(250px, 380px);
   gap: 20px;
   margin-top: 15px;
 }
@@ -1028,7 +1024,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 1024px) {
   .wrap {
-    padding: 1rem 1.5rem;
+    padding: 1rem 0.5rem; /* Reduced padding */
   }
   
   .hero {
@@ -1041,13 +1037,13 @@ footer {
   }
   
   .certification-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .wrap {
-    padding: 1rem;
+    padding: 0.5rem; /* Further reduced padding */
   }
   
   header {
@@ -1066,7 +1062,7 @@ footer {
     flex-direction: column;
   }
   
-  .about-cards {
+  .about-cards, .education-cards, .interest-cards {
     flex-direction: column;
   }
   
@@ -1090,7 +1086,7 @@ footer {
   }
   
   .brand-info h1 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
   }
   
   .brand-info p {
@@ -1098,11 +1094,11 @@ footer {
   }
   
   .intro h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
   }
   
   .floating-circle {
-    display: none;
+    display: none; /* Already hidden, kept for clarity */
   }
   
   .certification-grid {
@@ -1114,14 +1110,14 @@ footer {
   }
 
   .tag-scroll {
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Smaller font size */
     padding: 6px 12px;
-    margin: 0 15px;
+    margin: 0 10px; /* Reduced margin */
   }
 
   .tag-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     margin-right: 6px;
   }
 
@@ -1134,22 +1130,114 @@ footer {
   }
 
   .avatar {
-    width: 120px;
-    height: 120px;
+    width: min(120px, 35vw); /* Smaller and responsive */
+    height: min(120px, 35vw);
   }
 
   .profile-photo {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
+    max-width: min(120px, 35vw);
+    max-height: min(120px, 35vw);
   }
 
   .avatar-fallback {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
+    max-width: min(120px, 35vw);
+    max-height: min(120px, 35vw);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
   }
 
   .profile-card .small {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .wrap {
+    padding: 0.25rem; /* Minimal padding for small screens */
+  }
+
+  .brand-info h1 {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+  }
+
+  .brand-info p {
+    font-size: 0.8rem;
+  }
+
+  .intro h2 {
+    font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+  }
+
+  .lead {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 1.2rem; /* Reduced padding */
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tag-scroll {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    margin: 0 8px;
+  }
+
+  .tag-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .avatar {
+    width: min(100px, 30vw);
+    height: min(100px, 30vw);
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    max-width: min(100px, 30vw);
+    max-height: min(100px, 30vw);
+  }
+
+  .avatar-fallback {
+    width: 100%;
+    height: 100%;
+    max-width: min(100px, 30vw);
+    max-height: min(100px, 30vw);
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .education-card, .interest-card {
+    padding: 1rem;
+    max-height: 150px; /* Smaller height */
   }
 }
 
@@ -1168,49 +1256,4 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
-}
-
-/* Education Section (Refined) */
-#education {
-  margin-top: 20px;
-}
-
-.education-cards {
-  display: flex;
-  gap: 15px;
-  margin-top: 18px;
-}
-
-.education-card {
-  flex: 1;
-  background: var(--card);
-  padding: 1.2rem; /* Reduced padding */
-  border-radius: 8px; /* Reduced border radius */
-  border: 1px solid rgba(0, 0, 0, 0.03); /* Thinner border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-  max-height: 180px; /* Limited vertical height */
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.education-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.education-card h4 {
-  margin-bottom: 0.6rem;
-  color: var(--primary);
-  font-size: 1.1rem;
-}
-
-.education-card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* Interest Section (Refined) */
-#interest {
-  margin-top: 20px;
 }
