@@ -1,10 +1,8 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Dark mode toggle
 const themeBtn = document.getElementById('themeToggle');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Cek preferensi sistem atau localStorage
 if (localStorage.getItem('theme') === 'dark' || 
     (prefersDarkScheme.matches && !localStorage.getItem('theme'))) {
   document.body.classList.add('dark');
@@ -21,7 +19,6 @@ themeBtn.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
-// Smooth scroll untuk navigasi
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -42,14 +39,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Modal logic
 function openProject(el) {
   const modal = document.getElementById('modal');
   document.getElementById('modalTitle').textContent = el.dataset.title;
   document.getElementById('modalBody').textContent = el.querySelector('p').textContent;
   modal.classList.add('active');
   
-  // Tambahkan event listener untuk menutup modal dengan ESC
   document.addEventListener('keydown', handleEscKey);
 }
 
@@ -57,7 +52,6 @@ function closeModal() {
   const modal = document.getElementById('modal');
   modal.classList.remove('active');
   
-  // Hapus event listener
   document.removeEventListener('keydown', handleEscKey);
 }
 
@@ -67,14 +61,12 @@ function handleEscKey(event) {
   }
 }
 
-// Tutup modal ketika klik di luar konten modal
 document.getElementById('modal').addEventListener('click', (e) => {
   if (e.target.id === 'modal') {
     closeModal();
   }
 });
 
-// Contact form functions
 function sendEmail() {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
@@ -108,7 +100,6 @@ function copyEmail() {
     });
 }
 
-// Toast notification function
 function showToast(message, type = 'success') {
   const toast = document.createElement('div');
   toast.textContent = message;
@@ -126,12 +117,10 @@ function showToast(message, type = 'success') {
   toast.style.transition = 'opacity 0.3s ease-in-out';
   document.body.appendChild(toast);
 
-  // Fade in
   setTimeout(() => {
     toast.style.opacity = '1';
   }, 10);
 
-  // Fade out and remove
   setTimeout(() => {
     toast.style.opacity = '0';
     setTimeout(() => {
@@ -140,7 +129,6 @@ function showToast(message, type = 'success') {
   }, 3000);
 }
 
-// Animasi scroll dengan IntersectionObserver
 function setupScrollAnimations() {
   const elements = document.querySelectorAll('.fade-up');
   const observer = new IntersectionObserver((entries) => {
@@ -160,7 +148,6 @@ function setupScrollAnimations() {
   });
 }
 
-// Event listeners untuk tombol
 document.querySelector('.contact-btn').addEventListener('click', () => {
   const headerOffset = document.querySelector('header').offsetHeight;
   const contactSection = document.getElementById('contact');
@@ -189,18 +176,15 @@ document.querySelector('.send-btn').addEventListener('click', sendEmail);
 document.querySelector('.copy-btn').addEventListener('click', copyEmail);
 document.querySelector('.close-modal-btn').addEventListener('click', closeModal);
 
-// Event listeners untuk project cards
 document.querySelectorAll('.project').forEach(project => {
   project.addEventListener('click', (e) => {
-    // Cek jika klik pada link "Detail" di TechLeaf
     if (e.target.classList.contains('btn') && e.target.textContent === 'Detail') {
-      return; // Biarkan link bekerja tanpa membuka modal
+      return;
     }
     openProject(project);
   });
 });
 
-// Continuous animation for skills
 function animateSkills() {
   const skills = document.querySelectorAll('.skill, .tag');
   skills.forEach((skill, index) => {
@@ -210,12 +194,9 @@ function animateSkills() {
   });
 }
 
-// Event listeners saat halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
-  // Jalankan animasi scroll
   setupScrollAnimations();
 
-  // Tambahkan efek ketikan dinamis untuk teks hero
   const typingElement = document.querySelector('.typing');
   if (typingElement) {
     const text = typingElement.textContent;
@@ -231,10 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
   }
 
-  // Animasikan skills
   animateSkills();
 
-  // Debugging gambar profil
   const profilePhoto = document.querySelector('.profile-photo');
   if (profilePhoto) {
     console.log('Mencoba memuat foto profil dari:', profilePhoto.src);
@@ -250,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Debugging gambar podcast
   const podcastImage = document.querySelector('.activity-card:first-child .activity-img');
   if (podcastImage) {
     console.log('Mencoba memuat gambar podcast dari:', podcastImage.src);
@@ -266,7 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle error pada gambar tag scroller
   const tagIcons = document.querySelectorAll('.tag-icon');
   tagIcons.forEach(icon => {
     console.log('Mencoba memuat ikon tag:', icon.src);
@@ -277,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Gagal memuat ikon tag:', icon.src, err);
       icon.style.display = 'none';
       const parent = icon.parentElement;
-      parent.textContent = parent.textContent; // Preserve the text
+      parent.textContent = parent.textContent;
       parent.style.display = 'flex';
       parent.style.alignItems = 'center';
       parent.style.justifyContent = 'center';
@@ -285,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Validasi form input
   document.getElementById('name').addEventListener('blur', function() {
     this.style.borderColor = !this.value.trim() ? 'red' : '#ccc';
   });
@@ -299,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
     this.style.borderColor = !this.value.trim() ? 'red' : '#ccc';
   });
 
-  // Tambahkan event listener untuk aktivitas card kedua
   const activityDetailBtn = document.querySelector('.activity-card:nth-child(2) .activity-link');
   if (activityDetailBtn) {
     activityDetailBtn.addEventListener('click', function() {
@@ -308,7 +283,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Continuous background animation
 function updateBackgroundAnimation() {
   const circles = document.querySelectorAll('.floating-circle');
   circles.forEach((circle, index) => {
@@ -318,10 +292,8 @@ function updateBackgroundAnimation() {
   requestAnimationFrame(updateBackgroundAnimation);
 }
 
-// Mulai animasi background
 requestAnimationFrame(updateBackgroundAnimation);
 
-// Debounce scroll events for better performance
 let isScrolling;
 window.addEventListener('scroll', () => {
   clearTimeout(isScrolling);
